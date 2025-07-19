@@ -16,7 +16,7 @@ def test():
         
         def signal_handler(signum, frame):
             """Handle Ctrl+C signal"""
-            print("\nShutting down Streamlit...")
+            print("\nShutting down Database API...")
             try:
                 if hasattr(os, 'killpg'):
                     # Kill the entire process group (Unix/macOS)
