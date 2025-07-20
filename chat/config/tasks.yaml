@@ -1,0 +1,20 @@
+research_task:
+  description: >
+    Conduct a thorough research about {prompt}
+    Make sure you find any interesting and relevant information given
+    the current year is 2025.
+  expected_output: >
+    A list with 5 bullet points of the most relevant information about {prompt}
+  agent: researcher_agent
+  guardrail: ensure each bullet contains a minimum of 50 words
+  verbose: true
+
+summarization_task:
+  description: >
+    Review the context you got and summarize it in a concise manner.
+    Make sure you highlight the key points and insights.
+  expected_output: >
+    A concise summary of the key points and insights from the context.
+  agent: summarizer_agent
+  markdown: true
+  verbose: true

@@ -4,9 +4,9 @@ import signal
 import sys
 
 def test():
-    """Run Database API server for testing purposes."""
+    """Run Chat API server for testing purposes."""
     try:
-        app_path = os.path.join(os.path.dirname(__file__), 'db_api.py')
+        app_path = os.path.join(os.path.dirname(__file__), 'chat_api.py')
         
         # Create the subprocess
         process = subprocess.Popen(
@@ -16,7 +16,7 @@ def test():
         
         def signal_handler(signum, frame):
             """Handle Ctrl+C signal"""
-            print("\nShutting down Database API...")
+            print("\nShutting down Chat API...")
             try:
                 if hasattr(os, 'killpg'):
                     # Kill the entire process group (Unix/macOS)
@@ -41,7 +41,7 @@ def test():
         process.wait()
         
     except subprocess.CalledProcessError as e:
-        print(f"An error occurred while trying to run the Database API app: {e}")
+        print(f"An error occurred while trying to run the Chat API app: {e}")
     except KeyboardInterrupt:
-        print("\nDatabase API app interrupted by user")
+        print("\nChat API app interrupted by user")
         sys.exit(0)

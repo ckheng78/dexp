@@ -10,7 +10,7 @@ def run():
         
         # Create the subprocess
         process = subprocess.Popen(
-            ["uv", "tool", "run", "streamlit", "run", app_path],
+            ["uv", "run", "streamlit", "run", app_path],
             preexec_fn=os.setsid if hasattr(os, 'setsid') else None
         )
         
